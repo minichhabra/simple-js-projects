@@ -1,2 +1,2 @@
 # simple-js-projects
-Creating simple projects on javascript
+Creating simple projects using javascript
