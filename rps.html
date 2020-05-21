@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+
+    <title>Rock, Paper, Scissors</title>
+
+    <style>
+       *{margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::selection{background:#fb9fe5;text-shadow:none}a{color:#0088CC;text-decoration:none;outline:0}a:hover{color:#005580}a img{border:none}img{max-width:100%}html{font-size:100%}body{padding:5%;font:300 1.25em/1.6 monospace;background:#fff;color:#000;}h1{font-family:"Helvetica Neue",sans-serif;line-height:1;font-weight:300;margin-bottom:1em;}.game{padding:2em;background:#eee;}
+    </style>
+</head>
+<body>
+<h1>Rock, Paper, Scissors</h1>
+<h2>User choice</h2>
+<img id="paper" input="image" src="paper.jpg" height="50" width="50" onclick="dis(src)"> <p>Paper</p></img>
+<img id ="rock" input="image" src="rock.jpg" height="50" width="50" onclick="dis(src)"><p>Rock</p></img>
+<img id ="scissors" input="image" src="scissors.jpg" height="50" width="50" onclick="dis(src)"><p>Scissors</p></img>
+<script>
+     function dis(url)
+    {
+        document.write("<p>User Choice</p>");
+        //document.write(url);
+        var i = new Image(100,100);
+        if(url == "file:///C:/Users/minis/Desktop/paper.jpg"){
+        userChoice = "paper";
+        i.src = "paper.jpg";
+        document.body.appendChild(i);
+        }
+        else if(url == "file:///C:/Users/minis/Desktop/rock.jpg"){
+        userChoice = "rock";
+        i.src = "rock.jpg";
+            document.body.appendChild(i);
+        }
+        else{
+        userChoice="scissors";
+        i.src = "scissors.jpg";
+            document.body.appendChild(i);
+        }
+       
+        document.write("<p>Computer Choice</p>");
+        var img = new Image(100,100);
+        var computerChoice = Math.random();
+        if (computerChoice < 0.34) {
+            computerChoice = "rock";
+            img.src = "rock.jpg";
+            document.body.appendChild(img);
+            
+        } else if(computerChoice <= 0.67) {
+            computerChoice = "paper";
+            img.src = "paper.jpg";
+            document.body.appendChild(img);
+           
+        } else {
+            computerChoice = "scissors";
+            img.src = "scissors.jpg";
+            document.body.appendChild(img);
+           
+        }
+       
+
+        if (computerChoice === userChoice) {
+                document.write("It's a tie!");
+            }
+            else{
+            if (computerChoice === "rock") {
+                if (userChoice === "scissors") {
+                    // rock wins
+                    document.write("You win!");
+                } else {
+                    // paper wins
+                    document.write("You lose! Try again.");
+                }
+            }
+            if (computerChoice === "paper") {
+                if (userChoice === "rock") {
+                    // paper wins
+                    document.write("You lose! Try again");
+                } else {
+                    // scissors wins
+                    document.write("You win.");
+                }
+            }
+            if (computerChoice === "scissors") {
+                if (userChoice === "rock") {
+                    // rock wins
+                    document.write("You win!.");
+                } else {
+                    // scissors wins
+                    document.write("You lose. Try again");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
